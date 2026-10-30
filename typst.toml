@@ -1,0 +1,10 @@
+[package]
+name = "roteiro-hq"
+version = "0.3.0"
+entrypoint = "lib.typ"
+description = "Structured comic scripts with reading, editorial, layout and production views, reports, and English/Portuguese authoring APIs."
+repository = "https://github.com/3sdras/roteiro-hq"
+keywords = ["comics", "script", "hq", "roteiro"]
+categories = ["components"]
+compiler = "0.14.1"
+exclude = ["tests", "examples/*.pdf", ".DS_Store", "__pycache__"]

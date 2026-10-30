@@ -1,0 +1,8 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+tests/_casos-*/
+
+# Editor exports duplicate the named example PDFs kept in the repository.
+examples/exemplo-*.pdf
+examples/example-*.pdf
