@@ -51,12 +51,13 @@ namespaced imports to avoid collisions with Typst built-ins.
 
 ## Distribution and local copies
 
-The package is not published on Typst Universe. A runtime copy needs `lib.typ`
-and the complete `src` folder. Include the manifest and documentation when
+The package is not published on Typst Universe. A runtime copy needs `lib.typ`,
+the complete `src` folder, and `LICENSE`. Include the manifest and documentation when
 useful. Avoid absolute imports back into a development folder.
 
 Keep project-specific scripts, folder names, personal metadata, and working
 notes outside this repository. Examples must use synthetic material written
 for demonstration. Check both PDF contents and metadata before publishing.
 
-No license has been selected for this repository.
+The project uses the MIT License. Keep the license file and copyright notice
+when redistributing the package. The manifest's SPDX identifier is `MIT`.

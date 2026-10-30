@@ -113,4 +113,4 @@ spanning multiple rows, thematic indexes, and structured data export are not
 implemented. Word counts inspect static text rather than evaluating images,
 formulas, or `context` content. Details are in the user guide.
 
-No license has been selected for this repository.
+Licensed under the [MIT License](LICENSE).

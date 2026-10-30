@@ -284,4 +284,4 @@ O modo produção reaproveita a apresentação textual com filtragem de notas.
 Continuam fora desta versão: índices temáticos, exportação de dados e
 quadrinhos atravessando várias linhas.
 
-Nenhuma licença foi selecionada para este repositório.
+Licenciado sob a [licença MIT](LICENSE).
