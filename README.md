@@ -15,14 +15,15 @@ documents remain compatible. The English API translates command options, not
 the printed interface: PDF labels and validation messages remain in Portuguese.
 
 Requires **Typst 0.14.1 or later**. No FerrMat or other package dependencies.
-This package is **not published on Typst Universe**; import `lib.typ` locally.
+The Universe import below becomes available after the submission is accepted.
+For a source checkout before publication, use the local import described below.
 
 ## Quick start
 
-Save this as `main.typ` beside `lib.typ`:
+Save this as `main.typ`:
 
 ```typst
-#import "lib.typ" as hq
+#import "@preview/roteiro-hq:0.3.0" as hq
 
 #set page(paper: "a4", margin: 20mm)
 #set text(size: 11pt, lang: "en")
@@ -44,6 +45,8 @@ Save this as `main.typ` beside `lib.typ`:
 ```
 
 Compile with `typst compile main.typ main.pdf`.
+For local development, place the file beside `lib.typ` and replace the import
+with `#import "lib.typ" as hq`.
 Use the `hq` namespace: `page` is also a built-in Typst function.
 Keep the trailing comma in single-item arrays, such as `(item,)`.
 
@@ -91,7 +94,7 @@ and common speech modes. See the [complete API reference](docs/api.md).
 - [English example source](examples/example-english.typ) and [PDF](examples/english.pdf).
 - [Development guide](docs/development.md): architecture, checks, and documentation policy.
 
-Run from the package directory:
+After publication, run from the package directory:
 
 ```sh
 typst compile --root . examples/example-english.typ examples/english.pdf
@@ -99,7 +102,10 @@ typst compile --root . examples/example-english.typ examples/english-layout.pdf 
 typst compile --root . examples/example-english.typ examples/english-production.pdf --input mode=production
 ```
 
-## Checks and limits
+## Development checks and limits
+
+These checks are run from the [source repository](https://github.com/3sdras/roteiro-hq).
+Tests are not part of the Universe distribution.
 
 ```sh
 typst compile --root . tests/test-modelo.typ /tmp/hq-model.pdf

@@ -4,25 +4,25 @@
 
 ## Install locally
 
-Keep `lib.typ` and the entire `src` directory together. Import the entry point
-with a namespace:
+Import the published package with a namespace:
 
 ```typst
-#import "roteiro-hq/lib.typ" as hq
+#import "@preview/roteiro-hq:0.3.0" as hq
 ```
 
-The package is not published on Typst Universe. No `@preview` import is needed.
-The namespace prevents the English `page` alias from shadowing Typst's built-in
-`page`. Set paper, margins, font family, and document language yourself:
+This import becomes available once the submission is accepted. For a local
+source checkout, keep `lib.typ` and `src` together and use a relative import
+such as `#import "roteiro-hq/lib.typ" as hq`. The namespace prevents the English
+`page` alias from shadowing Typst's built-in `page`.
+Set paper, margins, font family, and document language yourself:
 
 ```typst
 #set page(paper: "a4", margin: 20mm, numbering: "1")
 #set text(size: 11pt, lang: "en")
 ```
 
-For bundled examples, compile from the package folder with `--root .` so files
-under `examples/` can import `../lib.typ`. Configure the editor's project root
-the same way if its preview rejects that import.
+Examples use the versioned package import too. For pre-publication testing,
+see the isolated package-registry instructions in the development guide.
 
 ## Write pages, rows, and panels
 

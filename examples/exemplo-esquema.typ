@@ -1,4 +1,4 @@
-#import "../lib.typ" as hq
+#import "@preview/roteiro-hq:0.3.0" as hq
 #import "pages/p01.typ": p1
 #import "pages/p02.typ": p2
 

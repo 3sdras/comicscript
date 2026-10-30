@@ -11,15 +11,16 @@ a hierarquia **página → linha → quadrinho**; os construtores devolvem dados
 `renderizar` escolhe como apresentá-los. Sem dependências externas ou do FerrMat.
 
 Esta versão acrescenta esquema geométrico, produção da arte e relatórios ao
-núcleo de autoria e revisão. Não é um pacote publicado
-no Typst Universe; use o arquivo `lib.typ` localmente. Requer Typst 0.14.1 ou superior.
+núcleo de autoria e revisão. O import do Typst Universe ficará disponível após
+a aprovação da submissão. Para desenvolvimento local, use `lib.typ`.
+Requer Typst 0.14.1 ou superior.
 
 ## Começar
 
-Crie um arquivo dentro desta pasta:
+Crie um arquivo Typst:
 
 ```typst
-#import "lib.typ" as hq
+#import "@preview/roteiro-hq:0.3.0" as hq
 
 #set page(paper: "a4", margin: 20mm)
 #set text(size: 11pt, lang: "pt", region: "BR")

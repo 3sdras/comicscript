@@ -1,4 +1,4 @@
-#import "../lib.typ" as hq
+#import "@preview/roteiro-hq:0.3.0" as hq
 
 #set document(title: "roteiro-hq — English authoring API")
 #set page(paper: "a4", margin: 20mm, numbering: "1")
