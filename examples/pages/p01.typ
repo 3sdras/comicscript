@@ -1,4 +1,4 @@
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 
 // Synthetic scene written solely to demonstrate the package.
 #let p1 = hq.page(

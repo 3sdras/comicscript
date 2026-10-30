@@ -7,12 +7,12 @@
 Import the published package with a namespace:
 
 ```typst
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 ```
 
 This import becomes available once the submission is accepted. For a local
 source checkout, keep `lib.typ` and `src` together and use a relative import
-such as `#import "roteiro-hq/lib.typ" as hq`. The namespace prevents the English
+such as `#import "comicscript/lib.typ" as hq`. The namespace prevents the English
 `page` alias from shadowing Typst's built-in `page`.
 Set paper, margins, font family, and document language yourself:
 

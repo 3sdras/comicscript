@@ -1,8 +1,8 @@
-# roteiro-hq 0.3.0
+# comicscript 0.3.0
 
 English | [Português](README.pt-BR.md)
 
-[Source repository](https://github.com/3sdras/roteiro-hq)
+[Source repository](https://github.com/3sdras/comicscript)
 
 A standalone Typst package for comic scripts. Write **pages → rows → panels**
 once, then generate reading scripts, editorial drafts, page layouts, production
@@ -23,7 +23,7 @@ For a source checkout before publication, use the local import described below.
 Save this as `main.typ`:
 
 ```typst
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 
 #set page(paper: "a4", margin: 20mm)
 #set text(size: 11pt, lang: "en")
@@ -104,7 +104,7 @@ typst compile --root . examples/example-english.typ examples/english-production.
 
 ## Development checks and limits
 
-These checks are run from the [source repository](https://github.com/3sdras/roteiro-hq).
+These checks are run from the [source repository](https://github.com/3sdras/comicscript).
 Tests are not part of the Universe distribution.
 
 ```sh

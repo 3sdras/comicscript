@@ -1,4 +1,4 @@
-# roteiro-hq 0.3.0
+# comicscript 0.3.0
 
 [English](README.md) | Português
 
@@ -20,7 +20,7 @@ Requer Typst 0.14.1 ou superior.
 Crie um arquivo Typst:
 
 ```typst
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 
 #set page(paper: "a4", margin: 20mm)
 #set text(size: 11pt, lang: "pt", region: "BR")
@@ -260,8 +260,8 @@ o modo roteiro.
 Para verificar, com Typst e Poppler (`pdftotext`) instalados:
 
 ```sh
-typst compile --root . tests/test-modelo.typ /tmp/roteiro-hq-modelo.pdf
-typst compile --root . tests/test-blocos.typ /tmp/roteiro-hq-blocos.pdf
+typst compile --root . tests/test-modelo.typ /tmp/comicscript-modelo.pdf
+typst compile --root . tests/test-blocos.typ /tmp/comicscript-blocos.pdf
 python3 tests/verificar.py
 ```
 

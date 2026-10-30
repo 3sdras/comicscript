@@ -38,8 +38,8 @@ English rendering. It removes temporary files.
 Compile and visually inspect examples after renderer changes. Successful
 compilation alone does not establish good page breaks or visual hierarchy.
 
-Examples and the README use `@preview/roteiro-hq:0.3.0`. Before publication,
-register a local copy under `preview/roteiro-hq/0.3.0` in a temporary directory
+Examples and the README use `@preview/comicscript:0.3.0`. Before publication,
+register a local copy under `preview/comicscript/0.3.0` in a temporary directory
 and pass its parent as `--package-path` (or set `TYPST_PACKAGE_PATH`). This tests
 the real manifest and package boundary without writing to the global cache.
 The runtime bundle needs only `lib.typ`, `src/`, the manifest, README, and license;

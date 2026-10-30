@@ -1,6 +1,6 @@
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 
-#set document(title: "roteiro-hq — English authoring API")
+#set document(title: "comicscript — English authoring API")
 #set page(paper: "a4", margin: 20mm, numbering: "1")
 #set text(font: "Libertinus Serif", size: 11pt, lang: "en")
 

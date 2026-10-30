@@ -1,4 +1,4 @@
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 
 // Synthetic continuation; it is not an excerpt from a working comic.
 #let p2 = hq.page(

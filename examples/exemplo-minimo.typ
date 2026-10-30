@@ -1,4 +1,4 @@
-#import "@preview/roteiro-hq:0.3.0" as hq
+#import "@preview/comicscript:0.3.0" as hq
 
 #set page(paper: "a4", margin: 20mm)
 #set text(font: "Libertinus Serif", size: 11pt, lang: "pt", region: "BR")

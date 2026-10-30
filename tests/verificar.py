@@ -16,7 +16,7 @@ def executar():
 
     total = 0
     with tempfile.TemporaryDirectory(prefix="_casos-", dir=ROOT / "tests") as fontes:
-        with tempfile.TemporaryDirectory(prefix="roteiro-hq-") as saidas:
+        with tempfile.TemporaryDirectory(prefix="comicscript-") as saidas:
 
             def compilar(codigo, erro=None):
                 nonlocal total
@@ -129,7 +129,7 @@ def executar():
             readme = (ROOT / "README.md").read_text(encoding="utf-8")
             quick_start = readme.split("```typst\n", 1)[1].split("```", 1)[0]
             quick_start = quick_start.replace('#import "lib.typ" as hq', '')
-            quick_start = quick_start.replace('#import "@preview/roteiro-hq:0.3.0" as hq', '')
+            quick_start = quick_start.replace('#import "@preview/comicscript:0.3.0" as hq', '')
             assert "Shall we?" in compilar(quick_start)
 
             # Relatórios selecionam os dados certos e preservam a ordem de leitura.
