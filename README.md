@@ -102,6 +102,23 @@ typst compile --root . examples/example-english.typ examples/english-layout.pdf 
 typst compile --root . examples/example-english.typ examples/english-production.pdf --input mode=production
 ```
 
+## Space between panels
+
+Script, editorial, and production views leave **1 cm** between panel frames by default.
+Set `panel-spacing` on `render` for the document, and `space-before` on a panel to
+replace just the gap before that panel (including the first panel of a new row):
+
+```typst
+hq.panel(space-before: 2cm)[A quieter beat after the preceding panel.]
+hq.render(pages, panel-spacing: 8mm)
+```
+
+Portuguese equivalents are `espaco-antes` on `quadro` and `espaco-quadros` on
+`renderizar`. Use absolute, nonnegative lengths (`cm`, `mm`, `pt`, `in`); `0pt`
+removes a gap. The first panel of each story page has no preceding panel gap.
+Spacing at a physical page break is discarded. The geometric layout view keeps
+its own layout rules.
+
 ## Development checks and limits
 
 These checks are run from the [source repository](https://github.com/3sdras/comicscript).
@@ -112,6 +129,7 @@ typst compile --root . tests/test-modelo.typ /tmp/hq-model.pdf
 typst compile --root . tests/test-blocos.typ /tmp/hq-blocks.pdf
 typst compile --root . tests/test-english.typ /tmp/hq-english.pdf
 python3 tests/verificar.py
+python3 tests/check-panel-spacing.py
 ```
 
 The layout view supports horizontal rows with variable-width panels. Panels

@@ -43,19 +43,31 @@ precisa escrever, além da hierarquia. Os quadrinhos e as linhas são argumentos
 posicionais; não há campos `linhas:` e `quadros:`. Nos arrays de um único item,
 mantenha a vírgula final: `(item,)`.
 
+## Espaço entre quadrinhos
+
+Nos modos roteiro, editorial e produção, a distância padrão entre quadros é **1 cm**.
+Altere o documento inteiro em `#hq.renderizar(paginas, espaco-quadros: 8mm)`.
+Para substituir só um intervalo, escreva `hq.quadro(espaco-antes: 2cm)[Descrição]`
+no quadrinho que vem depois. A opção também vale na passagem entre linhas.
+
+Use medidas absolutas não negativas: `cm`, `mm`, `pt` ou `in`; `0pt` remove o
+intervalo. O primeiro quadro de cada página da história não recebe espaço antes.
+O intervalo é descartado quando coincide com uma quebra de folha. O modo esquema
+mantém suas próprias regras de distribuição.
+
 ## API
 
 | Função | Argumentos essenciais | Opcionais e padrões |
 | --- | --- | --- |
 | `pagina(numero, ..linhas)` | Inteiro positivo e uma ou mais linhas | `titulo: none`, `objetivo: none`, `estado: none`, `notas: ()` |
 | `linha(..quadros)` | Um ou mais quadrinhos | `peso: 1`, `id: none`, `notas: ()` |
-| `quadro[visual]` | Texto livre da descrição | `id: none`, `peso: 1`, `plano: none`, `composicao: none`, `textos: ()`, `notas: ()`, `referencias: ()` |
+| `quadro[visual]` | Texto livre da descrição | `id: none`, `peso: 1`, `plano: none`, `composicao: none`, `textos: ()`, `notas: ()`, `referencias: ()`, `espaco-antes: none` |
 | `fala(personagem)[corpo]` | Nome do personagem e fala | `modo: "normal"` |
 | `legenda[corpo]` | Texto da legenda | — |
 | `som[corpo]` | Onomatopeia ou efeito sonoro | — |
 | `nota(categoria)[corpo]` | Categoria livre e observação | `estado: "aberta"`, `autor: none` |
 | `validar(paginas)` | Uma página ou array de páginas | Devolve um array validado |
-| `renderizar(paginas)` | Uma página ou array de páginas | `modo: "roteiro"`, `estados-notas: ("aberta", "resolvida", "descartada")`, `limite-palavras: 60` |
+| `renderizar(paginas)` | Uma página ou array de páginas | `modo: "roteiro"`, `estados-notas: ("aberta", "resolvida", "descartada")`, `limite-palavras: 60`, `espaco-quadros: 1cm` |
 | `mapa-narrativo(paginas)` | Uma página ou array de páginas | — |
 | `pendencias(paginas)` | Uma página ou array de páginas | Apenas notas abertas |
 | `dialogos(paginas)` | Uma página ou array de páginas | `personagem: none` (todos) |

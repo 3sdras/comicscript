@@ -42,6 +42,10 @@ def executar():
                 return subprocess.check_output(["pdftotext", str(destino), "-"], text=True)
 
             invalidos = (
+                ('#hq.quadro(espaco-antes: -1cm)[A]', "não negativa"),
+                ('#hq.quadro(espaco-antes: 1em)[A]', "absoluta"),
+                ('#hq.quadro(espaco-antes: "1cm")[A]', "medida"),
+                ('#hq.renderizar((), espaco-quadros: -1cm)', "não negativa"),
                 ('#hq.pagina(0, hq.linha(hq.quadro[A]))', "inteiro positivo"),
                 ('#hq.pagina(1.5, hq.linha(hq.quadro[A]))', "inteiro positivo"),
                 ('#hq.pagina(1)', "pelo menos uma linha"),

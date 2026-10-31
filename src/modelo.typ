@@ -1,4 +1,4 @@
-#import "validacao.typ": exigir-elemento, exigir-texto, exigir-nome, exigir-id, exigir-peso, exigir-notas
+#import "validacao.typ": exigir-elemento, exigir-texto, exigir-nome, exigir-id, exigir-peso, exigir-notas, exigir-espaco
 
 #let pagina(numero, titulo: none, objetivo: none, estado: none, notas: (), ..linhas) = {
   assert(type(numero) == int and numero > 0, message: "Número da página deve ser um inteiro positivo.")
@@ -25,7 +25,8 @@
   (tipo: "linha", peso: peso, id: id, notas: notas, quadros: quadros)
 }
 
-#let quadro(visual, id: none, peso: 1, plano: none, composicao: none, textos: (), notas: (), referencias: ()) = {
+#let quadro(visual, id: none, peso: 1, plano: none, composicao: none, textos: (), notas: (), referencias: (), espaco-antes: none) = {
+  if espaco-antes != none { exigir-espaco(espaco-antes) }
   exigir-texto(visual, "Descrição visual")
   exigir-id(id)
   exigir-peso(peso)
@@ -41,7 +42,7 @@
   assert(type(referencias) == array, message: "referencias deve ser um array de textos ou conteúdos Typst.")
   for item in referencias { exigir-texto(item, "Referência") }
   (tipo: "quadro", visual: visual, id: id, peso: peso, plano: plano, composicao: composicao,
-    textos: textos, notas: notas, referencias: referencias)
+    textos: textos, notas: notas, referencias: referencias, espaco-antes: espaco-antes)
 }
 
 #let fala(personagem, corpo, modo: "normal") = {

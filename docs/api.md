@@ -38,9 +38,9 @@ with children in `quadros`.
 
 ```typst
 hq.panel(visual, id: none, weight: 1, shot: none, composition: none,
-  texts: (), notes: (), references: ())
+  texts: (), notes: (), references: (), space-before: none)
 hq.quadro(visual, id: none, peso: 1, plano: none, composicao: none,
-  textos: (), notas: (), referencias: ())
+  textos: (), notas: (), referencias: (), espaco-antes: none)
 ```
 
 Write the description as the trailing content block:
@@ -132,17 +132,23 @@ rather than manually editing their dictionaries.
 ```typst
 hq.render(pages, mode: "script",
   note-statuses: ("open", "resolved", "discarded"), word-limit: 60,
-  layout-width: 140mm, layout-height: 180mm, layout-summaries: true)
+  layout-width: 140mm, layout-height: 180mm, layout-summaries: true, panel-spacing: 1cm)
 
 hq.renderizar(paginas, modo: "roteiro",
   estados-notas: ("aberta", "resolvida", "descartada"), limite-palavras: 60,
-  largura-esquema: 140mm, altura-esquema: 180mm, resumos-esquema: true)
+  largura-esquema: 140mm, altura-esquema: 180mm, resumos-esquema: true, espaco-quadros: 1cm)
 ```
 
 Returns formatted content. Calls validation before rendering.
+`panel-spacing` / `espaco-quadros` accepts a nonnegative absolute length.
+A panel's `space-before` / `espaco-antes` overrides only its preceding gap;
+`none` inherits the document value, and `0pt` removes it. This includes gaps
+between rows, but excludes the first panel of each story page. Gaps collapse at
+physical page breaks. The geometric layout view is unaffected.
 
 | English option | Portuguese option | Meaning |
 | --- | --- | --- |
+| `panel-spacing` | `espaco-quadros` | Gap between panel frames in script, editorial and production; default `1cm` |
 | `mode` | `modo` | `script`/`roteiro`, `editorial`, `layout`/`esquema`, `production`/`producao` |
 | `note-statuses` | `estados-notas` | Array of note statuses shown in editorial view |
 | `word-limit` | `limite-palavras` | Positive integer review threshold, or `none` to disable it |

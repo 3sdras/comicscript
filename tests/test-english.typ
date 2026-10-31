@@ -34,3 +34,7 @@
 #assert(hq.page(2, hq.row(hq.quadro[Mixed API.])).linhas.at(0).quadros.len() == 1)
 
 English and Portuguese constructors produce identical data.
+
+#assert(hq.panel(space-before: 2cm)[A].espaco-antes == 2cm)
+#assert(hq.panel(space-before: 0pt)[A] == hq.quadro(espaco-antes: 0pt)[A])
+#assert(hq.quadro[A].espaco-antes == none)

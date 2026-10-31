@@ -24,7 +24,7 @@
   ])
 }
 
-#let apresentar-roteiro(paginas, editorial: false, producao: false, estados-notas: (), limite-palavras: 60) = {
+#let apresentar-roteiro(paginas, editorial: false, producao: false, estados-notas: (), limite-palavras: 60, espaco-quadros: 1cm) = {
   set par(first-line-indent: 0pt, justify: false, leading: 0.7em, spacing: 0.8em)
   set heading(numbering: none)
   let estados = if producao { ("aberta", "resolvida") } else { estados-notas }
@@ -125,10 +125,14 @@
             apresentar-notas(selecionar-notas(quadro.notas), estados: estados, estilos: estilos)
           }
         ]
+        if li > 0 or qi > 0 {
+          let espaco = quadro.at("espaco-antes", default: none)
+          v(if espaco == none { espaco-quadros } else { espaco }, weak: true)
+        }
         // Mantém um quadro curto inteiro; um quadro maior que a área útil pode fluir.
         layout(tamanho => {
           let moldura = block.with(width: 100%, inset: 10pt, radius: 5pt,
-            stroke: 1.5pt + rgb("252525"), above: 8pt, below: 10pt)
+            stroke: 1.5pt + rgb("252525"), above: 0pt, below: 0pt)
           let altura = measure(moldura(breakable: false, corpo), width: tamanho.width).height
           moldura(breakable: altura > tamanho.height, corpo)
         })

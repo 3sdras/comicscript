@@ -21,6 +21,12 @@
     message: "peso deve ser um número finito maior que zero.")
 }
 
+#let exigir-espaco(valor) = {
+  assert(type(valor) == length, message: "O espaço entre quadros deve ser uma medida, como 1cm.")
+  assert(valor.em == 0 and valor.abs >= 0pt and valor.abs < 1000000pt,
+    message: "Use uma medida absoluta, finita e não negativa para o espaço entre quadros.")
+}
+
 #let exigir-notas(notas) = {
   assert(type(notas) == array, message: "notas deve ser um array, como (hq.nota(...)[...],).")
   for item in notas { exigir-elemento(item, "nota") }

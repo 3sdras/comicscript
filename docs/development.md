@@ -28,6 +28,7 @@ typst compile --root . tests/test-modelo.typ /tmp/hq-model.pdf
 typst compile --root . tests/test-blocos.typ /tmp/hq-blocks.pdf
 typst compile --root . tests/test-english.typ /tmp/hq-english.pdf
 python3 tests/verificar.py
+python3 tests/check-panel-spacing.py
 ```
 
 Typst tests check model behavior, geometry, frequency tiers, actual available
